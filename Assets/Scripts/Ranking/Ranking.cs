@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Ranking : MonoBehaviour
 {
+    public Text scoreText, myrank;
+    public Text[] rank = new Text[5];
+    public int score = 0;
+    private int[] bestScore = new int[5];
+    private string[] bestName = new string[5];
     void ScoreSet(int currentScore, string currentName)
     {
         PlayerPrefs.SetString("CurrentPlayerName", currentName);
@@ -41,7 +48,7 @@ public class Ranking : MonoBehaviour
         }
     }
 
-    void ScoreSet(int currentScore, string currentName)
+    void ScoreSet1(int currentScore, string currentName)
     {
         //Debug.Log("currentName: " + currentName);
         //일단 현재에 저장하고 시작
