@@ -11,14 +11,18 @@ public class GameManager : MonoBehaviour
 
     public bool isSolo;
 
+    //StartScene 에서 정한 플레이어 이름
     private string player1Name;
     private string player2Name;
 
+    //StartScene 에서 선택한 캐릭터
     public int player1Character { get; }
     public int player2Character { get; }
 
+    //StartScene 에서 선택한 난이도
     private int stageDifficulty;
 
+    //MainScene 에서 저장되는 점수
     private float player1Score;
     private float player2Score;
 
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     public void SetSolo(bool _isSolo)
     {
