@@ -46,7 +46,5 @@ public class Character : MonoBehaviour
             isDie = true;
             Time.timeScale = 0.0f;
         }
-
-        Debug.Log(hp);
     }
 }
