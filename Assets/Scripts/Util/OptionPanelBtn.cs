@@ -5,11 +5,12 @@ using UnityEngine;
 public class OptionPanelBtn : MonoBehaviour
 {
     public GameObject optionPanel;[SerializeField]
+    
 
 
     void Update()
     {
-        // ESC 키가 눌리면 패널을 꺼지게 함
+        // ESC 키가 눌리면 OpenOptionPanel() 메서드 호출
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             OpenOptionPanel();
@@ -24,9 +25,10 @@ public class OptionPanelBtn : MonoBehaviour
         {
             Time.timeScale = 0; // 게임 일시 정지
         }
+
         else
         {
-            Time.timeScale = 1; // 게임 재개
+            Time.timeScale = 1;
         }
     }
 }
