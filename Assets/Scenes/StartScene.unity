@@ -6831,6 +6831,8 @@ GameObject:
   - component: {fileID: 1768725537}
   - component: {fileID: 1768725539}
   - component: {fileID: 1768725538}
+  - component: {fileID: 1768725541}
+  - component: {fileID: 1768725540}
   m_Layer: 5
   m_Name: SelectStagePanel
   m_TagString: Untagged
@@ -6899,6 +6901,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768725536}
   m_CullTransparentMesh: 1
+--- !u!114 &1768725540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768725536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1da51d6fb5ff054b848f5107b0bc23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  easyButton: {fileID: 540341253}
+  normalButton: {fileID: 655013388}
+  hardButton: {fileID: 1673910781}
+--- !u!114 &1768725541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768725536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17655b5d59b7b624f910d4204c76e5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getBackButtonPrefab: {fileID: 2695633767232844998, guid: 01cf1bf2fec9fd64c8e1119249327ebd, type: 3}
+  panels:
+  - {fileID: 671000827}
+  - {fileID: 669780470}
+  - {fileID: 1357762014}
+  - {fileID: 214925677}
+  - {fileID: 10266724}
+  - {fileID: 756560118}
+  - {fileID: 1686059387}
+  - {fileID: 1768725536}
 --- !u!1 &1783243691
 GameObject:
   m_ObjectHideFlags: 0
