@@ -16,9 +16,9 @@ public class CharacterGenerator : MonoBehaviour
         else
         {
             GameObject newPlayer1 = Instantiate(characters[GameManager.Instance.player1Character]);
-            newPlayer1.transform.position = new Vector2(-5, -4);
+            newPlayer1.transform.position = new Vector2(-4, -4);
             GameObject newPlayer2 = Instantiate(characters[GameManager.Instance.player2Character]);
-            newPlayer2.transform.position = new Vector2(5, -4);
+            newPlayer2.transform.position = new Vector2(4, -4);
         }
     }
 
