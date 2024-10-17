@@ -7,9 +7,9 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-
-    public bool isSolo;
+    public static GameManager Instance { get; private set; }
+    
+    public bool isSolo {get; private set;}
 
     //StartScene 에서 정한 플레이어 이름
     private string player1Name;
@@ -65,4 +65,7 @@ public class GameManager : MonoBehaviour
     {
         player2Score = score;
     }
+
+    public string GetPlayer1Name()
+    {  return player1Name; }
 }
