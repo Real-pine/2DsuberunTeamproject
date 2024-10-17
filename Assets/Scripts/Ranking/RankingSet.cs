@@ -7,8 +7,8 @@ using Unity.VisualScripting;
 
 public class RankingSet : MonoBehaviour
 {
-    private float[] BestScore = new float[5];
-    private string[] BestName = new string[5];
+    private float[] BestScore = new float[7];
+    private string[] BestName = new string[7];
 
     void ScoreSet(float CurrentScore, string CurrentName) // 이름 입력받는부분이 구현되면 맞춰서 수정
     {
@@ -18,7 +18,7 @@ public class RankingSet : MonoBehaviour
         float tmpscore = 0f;
         string tmpname = string.Empty;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             //저장된 최고점수와 이름 가져오기 
             BestScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
@@ -43,11 +43,13 @@ public class RankingSet : MonoBehaviour
             }
         }
         //랭킹에 맞춰 이름 점수 저장
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             PlayerPrefs.SetFloat(i + "BestScore", BestScore[i]);
             PlayerPrefs.SetString(i.ToString() + "BestName", BestName[i]);
         }
+
+        PlayerPrefs.Save();
 
     }
 
