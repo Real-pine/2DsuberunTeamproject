@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleInfo
+public class ObstacleInfo : MonoBehaviour
 {
     public float Speed { get; }
     public float Damage { get; }

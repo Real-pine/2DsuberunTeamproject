@@ -12,6 +12,7 @@ public class ObstacleCollision: MonoBehaviour
         if (collision.tag == "Player")
         {
             //collision.GetComponent를 통해 Damage만큼 피해 입히기
+            collision.GetComponent<Character>().HitCharacter(Damage);
             Destroy(gameObject);
         }
     }
