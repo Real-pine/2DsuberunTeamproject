@@ -26,24 +26,25 @@ public class InputPlayerNamePanelUI : MonoBehaviour
         // 에러메세지 출력 비활성화
         errorMessage.SetActive(false);
         // TODO: HowManyPlay에서 Player1을 선택했다면 Player2비활성화 메서드
-        CheckHowManyPlay();
+        ActivateInputField();
         // InputField 입력제한
         player1InputField.characterLimit = maxNameLength;
         player2InputField.characterLimit = maxNameLength;
 
         // Confirm버튼 
-        player1ConfirmButton.onClick.AddListener(OnConfirmButtonClicked);
-        player2ConfirmButton.onClick.AddListener(OnConfirmButtonClicked);
+        //player1ConfirmButton.onClick.AddListener(OnConfirmButtonClicked);
+        //player2ConfirmButton.onClick.AddListener(OnConfirmButtonClicked);
 
         // 
     }
 
-    // Player2InputField 활성화 결정 메서드
-    private void CheckHowManyPlay()
+    // 인풋필드 활성화 메서드
+    private void ActivateInputField()
     {
-        // TODO: if(1P를 선택했으면 player2InputField비활성화player2InputField.onValueChanged.AddListener()로 하면될듯?)
-        // TODO: else(둘다 활성화&&디버그)
+        // TODO : 
     }
+
+
 
     // 글자수에 따른 이름 유효성 판별
     private bool IsValidName(string name)
