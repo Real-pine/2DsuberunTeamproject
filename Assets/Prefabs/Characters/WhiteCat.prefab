@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 995881582506947597}
   - component: {fileID: 8917240385818224928}
   - component: {fileID: 4994714204185048232}
+  - component: {fileID: 3123293246472985439}
+  - component: {fileID: 8239009049973462713}
   m_Layer: 0
   m_Name: WhiteCat
   m_TagString: Player
@@ -63,7 +65,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &1566382823763485831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93,7 +95,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: 0.01}
@@ -195,7 +197,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   front: {fileID: 6567152937818147928}
-  characterType: 3
+  characterType: 0
+--- !u!114 &3123293246472985439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604452080742001731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185d612b3f3cbca4180ee1f63d18f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8239009049973462713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604452080742001731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be42c35d754eaf4582f354bcc5d0aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4168616406912176446
 GameObject:
   m_ObjectHideFlags: 0

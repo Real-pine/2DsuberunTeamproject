@@ -89,6 +89,8 @@ GameObject:
   - component: {fileID: 1085734796162910326}
   - component: {fileID: 2801462690909194459}
   - component: {fileID: 9082924063666226964}
+  - component: {fileID: -8228881354642502562}
+  - component: {fileID: -5732522821869068428}
   m_Layer: 0
   m_Name: BlueCat
   m_TagString: Player
@@ -138,7 +140,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &8713560608493974914
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,7 +170,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: 0.01}
@@ -270,7 +272,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   front: {fileID: 4781166073203804497}
-  characterType: 1
+  characterType: 0
+--- !u!114 &-8228881354642502562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499651411780601737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185d612b3f3cbca4180ee1f63d18f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5732522821869068428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499651411780601737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be42c35d754eaf4582f354bcc5d0aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7029578989870172299
 GameObject:
   m_ObjectHideFlags: 0

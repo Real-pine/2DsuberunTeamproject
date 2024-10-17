@@ -164,6 +164,8 @@ GameObject:
   - component: {fileID: 5705434661675641750}
   - component: {fileID: 7285909405715549017}
   - component: {fileID: 3420914777487823542}
+  - component: {fileID: 7538426904719283382}
+  - component: {fileID: 5675544023522789825}
   m_Layer: 0
   m_Name: BlackCat
   m_TagString: Player
@@ -213,7 +215,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &7643214600657654287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,7 +245,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: 0.01}
@@ -346,6 +348,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   front: {fileID: 1615848005761477454}
   characterType: 0
+--- !u!114 &7538426904719283382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421710684271797964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185d612b3f3cbca4180ee1f63d18f19d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5675544023522789825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421710684271797964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be42c35d754eaf4582f354bcc5d0aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8930368394943453032
 GameObject:
   m_ObjectHideFlags: 0
