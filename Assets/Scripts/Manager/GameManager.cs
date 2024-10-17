@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
     private string player2Name;
 
     //StartScene 에서 선택한 캐릭터
-    public int player1Character { get; }
-    public int player2Character { get; }
+    public int player1Character { get; private set; }
+    public int player2Character { get; private set; }
 
     //StartScene 에서 선택한 난이도
     private int stageDifficulty;
@@ -64,6 +64,18 @@ public class GameManager : MonoBehaviour
     public void SetPlayer2Score(float score)
     {
         player2Score = score;
+    }
+
+    public void SetPlayerCharacter(int playerNumber, int characterType)
+    {
+        if(playerNumber == 1)
+        {
+            player1Character = characterType;
+        }
+        else if(playerNumber == 2)
+        {
+            player2Character = characterType;
+        }
     }
 
     public string GetPlayer1Name()
