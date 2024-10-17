@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.TextCore.Text;
+﻿using UnityEngine;
 
 public enum CharacterType
 {
@@ -12,12 +10,12 @@ public enum CharacterType
 
 public class Character : MonoBehaviour
 {
-    public readonly float FULLHP = 10.0f;
+    public readonly float FULLHP = 100.0f;
 
     public RectTransform front;
     public CharacterType characterType;
 
-    private float hp = 10.0f;
+    private float hp = 100.0f;
     private float speed = 1.0f;
     private bool isDie = false;
 
@@ -35,22 +33,20 @@ public class Character : MonoBehaviour
             case CharacterType.Brown: speed = 13.0f; break;
             case CharacterType.White: speed = 20.0f; break;
         }
+        front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void HitCharacter(float damage)
     {
-        ObstacleInfo obstacleInfo = collision.GetComponent<ObstacleInfo>();
+        hp -= damage;
+        front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
 
-        if (collision.CompareTag("Obstacle"))
+        if (hp <= 0)
         {
-            hp -= obstacleInfo.Damage;
-            front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
-
-            if (hp <= 0)
-            {
-                isDie = true;
-                Time.timeScale = 0.0f;
-            }
+            isDie = true;
+            Time.timeScale = 0.0f;
         }
+
+        Debug.Log(hp);
     }
 }

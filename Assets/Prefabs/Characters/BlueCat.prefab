@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 8713560608493974914}
   - component: {fileID: 1085734796162910326}
   - component: {fileID: 2801462690909194459}
+  - component: {fileID: 9082924063666226964}
   m_Layer: 0
   m_Name: BlueCat
   m_TagString: Player
@@ -126,7 +127,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -167,7 +168,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: 0.01}
@@ -256,6 +257,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9082924063666226964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499651411780601737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f5c50fdce1eaf42a6e52e1390534ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front: {fileID: 4781166073203804497}
+  characterType: 1
 --- !u!1 &7029578989870172299
 GameObject:
   m_ObjectHideFlags: 0

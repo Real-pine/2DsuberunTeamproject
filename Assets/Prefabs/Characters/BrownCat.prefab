@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 8909895748131965466}
   - component: {fileID: 5781051522346873525}
   - component: {fileID: 631142872937678182}
+  - component: {fileID: -8610662113972791063}
   m_Layer: 0
   m_Name: BrownCat
   m_TagString: Player
@@ -304,7 +305,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -345,7 +346,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: 0.01}
@@ -434,3 +435,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8610662113972791063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179046937404955223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f5c50fdce1eaf42a6e52e1390534ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front: {fileID: 5174204521860379794}
+  characterType: 2
