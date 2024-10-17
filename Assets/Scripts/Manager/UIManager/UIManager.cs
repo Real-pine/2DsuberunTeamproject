@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
 
     // 패널 기록 스택(겟백 프리팹 사용 시 스택형으로 미리 히스토리 저장)
     [SerializeField] private Stack<PanelType> panelHistory = new Stack<PanelType>();
+    // 생성된 GetBackButton을 저장할 변수
+    private GameObject activeGetBackButton;
 
     private void Start()
     {
@@ -60,6 +62,12 @@ public class UIManager : MonoBehaviour
     // GetBackButton 생성 및 부모Canvas 자동 탐색
     private void CreateGetBackButton(GameObject panel)
     {
+        // 이전에 생서된 GetBackButton이 있다면 제거
+        if(activeGetBackButton != null)
+        {
+            Destroy(activeGetBackButton);
+        }
+        
         // 부모Canvas 찾기
         Canvas parentCanvas = panel.GetComponentInParent<Canvas>();
         if(parentCanvas == null)
@@ -68,13 +76,13 @@ public class UIManager : MonoBehaviour
         }
 
         // Back 버튼 생성 후 부모에 배치
-        GameObject getBackButton = Instantiate(getBackButtonPrefab, parentCanvas.transform);
-        getBackButton.GetComponent<Button>().onClick.AddListener(()  => GetBack(panel));
+        activeGetBackButton = Instantiate(getBackButtonPrefab, parentCanvas.transform);
+        activeGetBackButton.GetComponent<Button>().onClick.AddListener(()  => GetBack(panel));
     }
 
     private void GetBack(GameObject currentPanel)
     {
-        if(panelHistory.Count > 1)
+        if (panelHistory.Count > 1)
         {
             // 현재 패널 닫기
             currentPanel.SetActive(false);
@@ -83,7 +91,13 @@ public class UIManager : MonoBehaviour
             // 직전 패널 꺼내오기
             PanelType previousPanelType = panelHistory.Peek();
             // 직전 패널 활성화
-            panels[(int)previousPanelType].SetActive(true);    
+            panels[(int)previousPanelType].SetActive(true);
+
+            if (activeGetBackButton != null)
+            {
+                Destroy(activeGetBackButton);
+                activeGetBackButton = null;
+            }
         }
     }
 }
