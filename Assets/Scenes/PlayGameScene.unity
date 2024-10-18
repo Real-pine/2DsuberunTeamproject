@@ -623,10 +623,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1160427181}
     m_Modifications:
+    - target: {fileID: 2848887644918711557, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81047e2290d31b9428118eca13b83d49, type: 2}
     - target: {fileID: 3327469909229831317, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
       propertyPath: m_Name
       value: Tilemap
       objectReference: {fileID: 0}
+    - target: {fileID: 4088052551427765828, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81047e2290d31b9428118eca13b83d49, type: 2}
+    - target: {fileID: 4640969049419190890, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81047e2290d31b9428118eca13b83d49, type: 2}
     - target: {fileID: 5592168605750750925, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
       propertyPath: m_LocalPosition.x
       value: -865.36536
@@ -688,10 +700,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1160427181}
     m_Modifications:
+    - target: {fileID: 2848887644918711557, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81047e2290d31b9428118eca13b83d49, type: 2}
     - target: {fileID: 3327469909229831317, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
       propertyPath: m_Name
       value: Tilemap2
       objectReference: {fileID: 0}
+    - target: {fileID: 4088052551427765828, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81047e2290d31b9428118eca13b83d49, type: 2}
+    - target: {fileID: 4640969049419190890, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81047e2290d31b9428118eca13b83d49, type: 2}
     - target: {fileID: 5592168605750750925, guid: 7e2e00117e10a5c448150fbaf97cf986, type: 3}
       propertyPath: m_LocalPosition.x
       value: -865.36536
