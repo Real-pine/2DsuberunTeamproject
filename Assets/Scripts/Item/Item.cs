@@ -1,11 +1,21 @@
 using UnityEngine;
 
+public enum ItemType
+{
+    HpRecovery,
+    CharacterSpeedUp,
+    ObstaSpeedDown
+}
+
 public class Item : MonoBehaviour
 {
-    public float Speed { get; }
+    private float Speed { get; }
+    public ItemType ItemType { get; }
 
-    public Item(float speed = 10, float damage = 0)
+
+    public Item(ItemType type, float speed = 10)
     {
+        ItemType = type;
         Speed = speed;
     }
 }

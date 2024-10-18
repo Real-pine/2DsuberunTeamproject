@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public enum CharacterType
 {
@@ -11,13 +12,16 @@ public enum CharacterType
 public class Character : MonoBehaviour
 {
     public readonly float FULLHP = 100.0f;
+    public readonly float DURATIONTIME = 5.0f;
 
     [SerializeField] private RectTransform front;
     [SerializeField] private CharacterType characterType;
 
     private AnimationController animController;
+    private Timer effectTimer;
     private float hp = 100.0f;
     private bool isDie = false;
+
     public float Speed { get; private set; }
 
     public void Awake()
@@ -50,5 +54,26 @@ public class Character : MonoBehaviour
             isDie = true;
             Time.timeScale = 0.0f;
         }
+    }
+
+    public void HpRecovery()
+    {
+        hp += 10.0f;
+        if(hp > FULLHP)
+        {
+            hp = FULLHP;
+        }
+    }
+
+    public void CharacterSpeedUp()
+    {
+        float prevSpeed = Speed;
+        Speed += Speed * 0.2f;
+        StartCoroutine(ResetSpeed(prevSpeed));
+    }
+
+    private IEnumerator ResetSpeed(float speed)
+    {
+       yield return new WaitForSeconds(speed);
     }
 }
