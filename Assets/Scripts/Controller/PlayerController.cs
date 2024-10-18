@@ -28,14 +28,17 @@ public class PlayerController : MonoBehaviour
         Speed = character.Speed;
     }
 
+    private void Update()
+    {
+        // 스프라이트 방향 전환
+        if (characterRigidbody.velocity.x > 0) characterRenderer.flipX = true;
+        else if (characterRigidbody.velocity.x < 0) characterRenderer.flipX = false;
+    }
+
     private void FixedUpdate()
     {
         player();
         animController.Move(characterRigidbody.velocity);
-
-        // 스프라이트 방향 전환
-        if (characterRigidbody.velocity.x > 0) characterRenderer.flipX = false;
-        else if (characterRigidbody.velocity.x < 0) characterRenderer.flipX = true;
     }
 
     public void player()
@@ -60,6 +63,6 @@ public class PlayerController : MonoBehaviour
         }
 
         // Rigidbody2D의 속도 설정
-        characterRigidbody.velocity = new Vector2(movement.x, movement.y).normalized * Speed;
+        characterRigidbody.velocity = movement.normalized * Speed;
     }
 }
