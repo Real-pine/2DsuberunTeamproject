@@ -48,7 +48,7 @@ public class Character : MonoBehaviour
         if (hp <= 0)
         {
             isDie = true;
-            Time.timeScale = 0.0f;
+            GameManager.Instance.OnPlayerDeath();
         }
     }
 }
