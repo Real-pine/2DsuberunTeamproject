@@ -45,21 +45,43 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W)) // 위 방향키
+        if (GetComponent<Character>().playerNumber == 1)
         {
-            movement += Vector3.up;
+            if (Input.GetKey(KeyCode.W)) // 위 방향키
+            {
+                movement += Vector3.up;
+            }
+            if (Input.GetKey(KeyCode.S)) // 아래 방향키
+            {
+                movement += Vector3.down;
+            }
+            if (Input.GetKey(KeyCode.A)) // 왼쪽 방향키
+            {
+                movement += Vector3.left;
+            }
+            if (Input.GetKey(KeyCode.D)) // 오른쪽 방향키
+            {
+                movement += Vector3.right;
+            }
         }
-        if (Input.GetKey(KeyCode.S)) // 아래 방향키
+        else if (GetComponent<Character>().playerNumber == 2)
         {
-            movement += Vector3.down;
-        }
-        if (Input.GetKey(KeyCode.A)) // 왼쪽 방향키
-        {
-            movement += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D)) // 오른쪽 방향키
-        {
-            movement += Vector3.right;
+            if (Input.GetKey(KeyCode.UpArrow)) // 위 방향키
+            {
+                movement += Vector3.up;
+            }
+            if (Input.GetKey(KeyCode.DownArrow)) // 아래 방향키
+            {
+                movement += Vector3.down;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow)) // 왼쪽 방향키
+            {
+                movement += Vector3.left;
+            }
+            if (Input.GetKey(KeyCode.RightArrow)) // 오른쪽 방향키
+            {
+                movement += Vector3.right;
+            }
         }
 
         // Rigidbody2D의 속도 설정
