@@ -3,21 +3,34 @@ using UnityEngine.EventSystems;
 
 public class Background : MonoBehaviour
 {
-    [SerializeField] private Transform target;
-    [SerializeField] private float scrollAmount; // 두 배경 사이의 거리
     [SerializeField] private float moveSpeed;
+    [SerializeField] private Transform[] sprites;
+    private int startIndex;
+    private int endIndex;
 
-    private Vector3 moveDirection = new Vector3(0f, -1f, 0f);
+    float viewHeight;
 
+    private void Awake()
+    {
+        viewHeight = Camera.main.orthographicSize * (-2) ;
+    }
     private void Update()
     {
-        // 
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
-        
-        // 배경이 설정 범위 벗어나면 위치 재설정
-        if(transform.position.y <= -scrollAmount)
+        Vector3 currentPosition = transform.position;
+        Vector3 nextPosition = Vector3.down * moveSpeed * Time.deltaTime;
+        transform.position = currentPosition + nextPosition;
+
+        if (sprites[endIndex].position.y < viewHeight )
         {
-            transform.position = target.position - moveDirection * scrollAmount;
+            // 배경재사용
+            Vector3 backSpritePosition = sprites[startIndex].localPosition;
+            Vector3 frontSpritePosition = sprites[endIndex].localPosition;
+            sprites[endIndex].transform.localPosition = backSpritePosition + Vector3.up * viewHeight;
+
+            // 스프라이트 인덱스 이어붙이기
+            int startIndexSave = startIndex;
+            startIndex = endIndex;
+            endIndex = startIndexSave - 1 == -1 ? sprites.Length - 1 : startIndexSave - 1;
         }
     }
 }
