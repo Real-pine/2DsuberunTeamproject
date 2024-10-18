@@ -17,7 +17,7 @@ public class AnimationController : MonoBehaviour
     public void Move(Vector2 vector)
     {
         // 작으면 false 크면 true
-        animator.SetBool(isWalking, vector.magnitude > magnituteThreshold);
+        animator.SetBool(isWalking, Mathf.Abs(vector.x) > magnituteThreshold);
     }
 
     public void Hit()
