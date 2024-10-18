@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
     [SerializeField] private CharacterType characterType;
 
     private AnimationController animController;
-    private float hp = 100.0f;
+    public float hp = 100.0f;
     private bool isDie = false;
     private bool isInvincible = false;
 
@@ -67,6 +67,8 @@ public class Character : MonoBehaviour
         if (hp <= 0)
         {
             isDie = true;
+            GetComponent<SettingPlayerScore>().StopScoring();
+            Destroy(gameObject);
             GameManager.Instance.OnPlayerDeath();
         }
     }
