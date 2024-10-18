@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] float Speed = 5f;
+    [SerializeField] float x; // 캐릭터가 시작 할 x 좌표 위치
+    [SerializeField] float y; // 캐릭터가 시작 할 y 좌표 위치
+
+
     private AnimationController animController;
     private Character character;
     
     private Rigidbody2D characterRigidbody;
     private SpriteRenderer characterRenderer;
-
-    private float speed;
-    private float y;
 
     private void Awake()
     {
@@ -25,20 +27,40 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        y = character.transform.position.y;
-        transform.position = new Vector3(0, y);
-        speed = character.Speed;
+        transform.position = new Vector3(x, y);
+        //캐릭터의 위치 지정
     }
 
     private void FixedUpdate()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        //x축에 대한 이동 코드
-        characterRigidbody.velocity = (new Vector2(x, 0)).normalized * speed;
-        //speed(이동 속도)와 속도를 균등하게 하는 normalized를 사용해 위치를 업데이트
+        player();
         animController.Move(characterRigidbody.velocity);
 
         if (x > 0) characterRenderer.flipX = true;
         else if (x < 0) characterRenderer.flipX = false;
+    }
+
+    public void player()
+    {
+        Vector3 movement = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.W)) // 위 방향키
+        {
+            movement += Vector3.up;
+        }
+        if (Input.GetKey(KeyCode.S)) // 아래 방향키
+        {
+            movement += Vector3.down;
+        }
+        if (Input.GetKey(KeyCode.A)) // 왼쪽 방향키
+        {
+            movement += Vector3.left;
+        }
+        if (Input.GetKey(KeyCode.D)) // 오른쪽 방향키
+        {
+            movement += Vector3.right;
+        }
+
+        transform.position += (Vector3)movement.normalized * Time.deltaTime * Speed;
     }
 }

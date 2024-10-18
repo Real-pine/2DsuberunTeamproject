@@ -3,21 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController2 : MonoBehaviour
-{
-    [SerializeField] float Speed;
+{ 
+    [SerializeField] float Speed = 5f;
     [SerializeField] float x; // 캐릭터가 시작 할 x 좌표 위치
     [SerializeField] float y; // 캐릭터가 시작 할 y 좌표 위치
-   
-    void Start()
+
+
+    private AnimationController animController;
+    private Character character;
+
+    private Rigidbody2D characterRigidbody;
+    private SpriteRenderer characterRenderer;
+
+    private void Awake()
+    {
+        animController = GetComponent<AnimationController>();
+        character = GetComponent<Character>();
+        characterRigidbody = GetComponent<Rigidbody2D>();
+        characterRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
     {
         transform.position = new Vector3(x, y);
         //캐릭터의 위치 지정
     }
 
-
-    void Update()
+    private void FixedUpdate()
     {
         player2();
+        animController.Move(characterRigidbody.velocity);
+
+        if (x > 0) characterRenderer.flipX = true;
+        else if (x < 0) characterRenderer.flipX = false;
     }
 
     public void player2()
