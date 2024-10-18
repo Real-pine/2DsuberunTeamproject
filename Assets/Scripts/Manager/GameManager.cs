@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     
     public bool isSolo {get; private set;}
+    //GameOver판단을 위한 변수
+    private int deadPlayerCount = 0; 
 
     //StartScene 에서 정한 플레이어 이름
     private string player1Name;
@@ -24,8 +26,8 @@ public class GameManager : MonoBehaviour
     private int stageDifficulty;
 
     //MainScene 에서 저장되는 점수
-    private float player1Score;
-    private float player2Score;
+    public float player1Score { get; private set; }
+    public float player2Score { get; private set; }
 
     private void OnEnable()
     {
@@ -82,8 +84,23 @@ public class GameManager : MonoBehaviour
     public string GetPlayer1Name()
     {  return player1Name; }
 
-    public void LoadMainScene()
+    // 플레이어 사망 로직 처리, 모든 플레이어가 사망했는지 확인
+    public void OnPlayerDeath()
     {
-        SceneManager.LoadScene("PlayGameScene");
+        deadPlayerCount++;
+
+        if (isSolo)
+        {
+            // 싱글 플레이의 경우 첫 번째 사망에서 바로 게임 오버
+            WhenGameOver.Instance.TriggerGameOverUI();
+        }
+        else
+        {
+            int totalPlayer = 2;
+            if (deadPlayerCount >= totalPlayer)
+            {
+                WhenGameOver.Instance.TriggerGameOverUI();
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SelectStagePanel : MonoBehaviour
@@ -28,6 +29,6 @@ public class SelectStagePanel : MonoBehaviour
     {
         GameManager.Instance.SetDifficulty(difficulty);
 
-        GameManager.Instance.LoadMainScene();
+        SceneManager.LoadScene("PlayGameScene");
     }
 }
