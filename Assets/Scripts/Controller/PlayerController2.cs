@@ -61,6 +61,6 @@ public class PlayerController2 : MonoBehaviour
             movement += Vector3.right;
         }
 
-        characterRigidbody.velocity = (new Vector2(x, y)).normalized * Speed;
+        characterRigidbody.velocity = (new Vector2(x, y)).normalized * Speed * Time.deltaTime;
     }
 }
