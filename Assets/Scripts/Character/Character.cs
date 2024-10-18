@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
 {
     public int playerNumber { get; private set; }
 
-    public readonly float FULLHP = 100.0f;
+    public static readonly float FULLHP = 100.0f;
     public readonly float DURATIONTIME = 5.0f;
     public readonly float UPSPEED = 0.2f;
 
@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
     [SerializeField] private CharacterType characterType;
 
     private AnimationController animController;
-    public float hp = 100.0f;
+    private float hp = FULLHP;
     private bool isDie = false;
     private bool isInvincible = false;
 
@@ -67,8 +67,6 @@ public class Character : MonoBehaviour
         if (hp <= 0)
         {
             isDie = true;
-            GetComponent<SettingPlayerScore>().StopScoring();
-            Destroy(gameObject);
             GameManager.Instance.OnPlayerDeath();
         }
     }

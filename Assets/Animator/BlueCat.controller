@@ -113,7 +113,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bluecat_run
+  m_Name: bluecat_hit
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -127,7 +127,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8ff3a143f29f871408878949d1c12e34, type: 2}
+  m_Motion: {fileID: 7400000, guid: 70e37f77ad15ded4ca3dfb5407c6a317, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -174,7 +174,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bluecat_hit
+  m_Name: bluecat_run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -188,7 +188,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 70e37f77ad15ded4ca3dfb5407c6a317, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8ff3a143f29f871408878949d1c12e34, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
