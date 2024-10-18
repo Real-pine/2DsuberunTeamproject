@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEditor.SearchService;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemCollision : MonoBehaviour
 {
@@ -25,7 +28,7 @@ public class ItemCollision : MonoBehaviour
         {
             case ItemType.HpRecovery: character.HpRecovery(); break;
             case ItemType.CharacterSpeedUp:character.CharacterSpeedUp(); break;
-            case ItemType.ObstaSpeedDown: break;
+            case ItemType.CharacterInvincible: character.CharacterInvincible(); break;
         }
     }
 }

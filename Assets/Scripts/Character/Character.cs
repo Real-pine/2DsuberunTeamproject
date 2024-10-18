@@ -13,14 +13,15 @@ public class Character : MonoBehaviour
 {
     public readonly float FULLHP = 100.0f;
     public readonly float DURATIONTIME = 5.0f;
+    public readonly float UPSPEED = 0.2f;
 
     [SerializeField] private RectTransform front;
     [SerializeField] private CharacterType characterType;
 
     private AnimationController animController;
-    private Timer effectTimer;
     private float hp = 100.0f;
     private bool isDie = false;
+    private bool isInvincible = false;
 
     public float Speed { get; private set; }
 
@@ -40,11 +41,11 @@ public class Character : MonoBehaviour
             case CharacterType.White: Speed = 10.5f; break;
         }
         front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
-        Debug.Log(Speed);
     }
 
     public void HitCharacter(float damage)
     {
+        if (isInvincible) return;
         hp -= damage;
         front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
         animController.Hit();
@@ -68,12 +69,24 @@ public class Character : MonoBehaviour
     public void CharacterSpeedUp()
     {
         float prevSpeed = Speed;
-        Speed += Speed * 0.2f;
+        Speed += Speed * UPSPEED;
         StartCoroutine(ResetSpeed(prevSpeed));
     }
 
-    private IEnumerator ResetSpeed(float speed)
+    private IEnumerator ResetSpeed(float prevSpeed)
     {
-       yield return new WaitForSeconds(speed);
+        yield return new WaitForSeconds(DURATIONTIME);
+        Speed = prevSpeed;
+    }
+
+    public void CharacterInvincible()
+    {
+        StartCoroutine(ResetInvincible());
+    }
+
+    private IEnumerator ResetInvincible()
+    {
+        yield return new WaitForSeconds(DURATIONTIME);
+        isInvincible = false;
     }
 }

@@ -4,13 +4,13 @@ public enum ItemType
 {
     HpRecovery,
     CharacterSpeedUp,
-    ObstaSpeedDown
+    CharacterInvincible
 }
 
 public class Item : MonoBehaviour
 {
     private float Speed { get; }
-    public ItemType ItemType { get; }
+    public ItemType ItemType;
 
 
     public Item(ItemType type, float speed = 10)
