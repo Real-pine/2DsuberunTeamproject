@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController2 : MonoBehaviour
-{ 
+{
     [SerializeField] float Speed = 5f;
-    [SerializeField] float x; // 캐릭터가 시작 할 x 좌표 위치
-    [SerializeField] float y; // 캐릭터가 시작 할 y 좌표 위치
-
 
     private AnimationController animController;
     private Character character;
 
-    private Rigidbody2D characterRigidbody;
+    [SerializeField] Rigidbody2D characterRigidbody;
     private SpriteRenderer characterRenderer;
 
     private void Awake()
@@ -25,22 +22,21 @@ public class PlayerController2 : MonoBehaviour
 
     private void Start()
     {
-        x = character.transform.position.x;
-        y = character.transform.position.y;
-        transform.position = new Vector3(x, y);
+        // 캐릭터의 속도를 초기화
         Speed = character.Speed;
     }
 
     private void FixedUpdate()
     {
-        player2();
+        player();
         animController.Move(characterRigidbody.velocity);
 
-        if (x > 0) characterRenderer.flipX = true;
-        else if (x < 0) characterRenderer.flipX = false;
+        // 스프라이트 방향 전환
+        if (characterRigidbody.velocity.x > 0) characterRenderer.flipX = false;
+        else if (characterRigidbody.velocity.x < 0) characterRenderer.flipX = true;
     }
 
-    public void player2()
+    public void player()
     {
         Vector3 movement = Vector3.zero;
 
@@ -61,6 +57,7 @@ public class PlayerController2 : MonoBehaviour
             movement += Vector3.right;
         }
 
-        characterRigidbody.velocity = (new Vector2(x, y)).normalized * Speed * Time.deltaTime;
+        // Rigidbody2D의 속도 설정
+        characterRigidbody.velocity = new Vector2(movement.x, movement.y).normalized * Speed;
     }
 }
