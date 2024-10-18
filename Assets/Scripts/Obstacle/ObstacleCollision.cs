@@ -7,6 +7,11 @@ public class ObstacleCollision: MonoBehaviour
 {
     private float Damage;
 
+    public void SetDamage(float damage)
+    {
+        Damage = damage;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
