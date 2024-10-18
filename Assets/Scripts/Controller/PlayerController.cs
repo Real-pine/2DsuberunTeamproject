@@ -27,8 +27,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        x = character.transform.position.x;
+        y = character.transform.position.y;
         transform.position = new Vector3(x, y);
-        //캐릭터의 위치 지정
+        Speed = character.Speed;
     }
 
     private void FixedUpdate()
@@ -61,6 +63,6 @@ public class PlayerController : MonoBehaviour
             movement += Vector3.right;
         }
 
-        transform.position += (Vector3)movement.normalized * Time.deltaTime * Speed;
+        characterRigidbody.velocity = (new Vector2(x, y)).normalized * Speed * Time.deltaTime;
     }
 }
