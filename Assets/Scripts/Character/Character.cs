@@ -1,5 +1,6 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public enum CharacterType
 {
@@ -11,6 +12,8 @@ public enum CharacterType
 
 public class Character : MonoBehaviour
 {
+    public int playerNumber { get; private set; }
+
     public readonly float FULLHP = 100.0f;
     public readonly float DURATIONTIME = 5.0f;
     public readonly float UPSPEED = 0.2f;
@@ -23,6 +26,9 @@ public class Character : MonoBehaviour
     private bool isDie = false;
     private bool isInvincible = false;
 
+    private Dictionary<string, float> initialSpeed = new Dictionary<string, float>
+    { { "Black", 10.0f }, { "Blue", 9.0f }, { "Brown", 9.5f }, { "White", 10.5f } };
+
     //피격 시 잠시 무적
     private bool isHit = false;
     private float hitDelay = 1.0f;
@@ -33,17 +39,17 @@ public class Character : MonoBehaviour
     public void Awake()
     {
         animController = GetComponent<AnimationController>();
-        setCharacter();
     }
 
-    private void setCharacter()
+    public void setCharacter(int _playerNumber)
     {
+        playerNumber = _playerNumber;
         switch (characterType)
         {
-            case CharacterType.Black: Speed = 10.0f; break;
-            case CharacterType.Blue: Speed = 9.0f; break;
-            case CharacterType.Brown: Speed = 9.5f; break;
-            case CharacterType.White: Speed = 10.5f; break;
+            case CharacterType.Black: Speed = initialSpeed[characterType.ToString()]; break;
+            case CharacterType.Blue: Speed = initialSpeed[characterType.ToString()]; break;
+            case CharacterType.Brown: Speed = initialSpeed[characterType.ToString()]; break;
+            case CharacterType.White: Speed = initialSpeed[characterType.ToString()]; break;
         }
         front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
     }
@@ -76,19 +82,19 @@ public class Character : MonoBehaviour
 
     public void CharacterSpeedUp()
     {
-        float prevSpeed = Speed;
         Speed += Speed * UPSPEED;
-        StartCoroutine(ResetSpeed(prevSpeed));
+        StartCoroutine(ResetSpeed());
     }
 
-    private IEnumerator ResetSpeed(float prevSpeed)
+    private IEnumerator ResetSpeed()
     {
         yield return new WaitForSeconds(DURATIONTIME);
-        Speed = prevSpeed;
+        Speed = initialSpeed[characterType.ToString()];
     }
 
     public void CharacterInvincible()
     {
+        isInvincible = true;
         StartCoroutine(ResetInvincible());
     }
 

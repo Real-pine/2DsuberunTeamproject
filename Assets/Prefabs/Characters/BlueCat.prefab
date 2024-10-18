@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   front: {fileID: 4781166073203804497}
-  characterType: 0
+  characterType: 1
 --- !u!114 &-8228881354642502562
 MonoBehaviour:
   m_ObjectHideFlags: 0
