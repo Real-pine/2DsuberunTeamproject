@@ -6,12 +6,12 @@ using UnityEngine;
 public class ObstacleGenerator : MonoBehaviour
 {
     public GameObject obstaclePrefab;
-    private float delay = 1;
+    private float delay = 1f;
 
     private void Generate()
     {
         GameObject newObstacle = Instantiate(obstaclePrefab);
-        newObstacle.transform.position = Vector3.up * 5f;
+        newObstacle.transform.position = new Vector2(Random.Range(-5.0f, 5.0f), 5);
     }
 
     private void Update()
@@ -19,7 +19,7 @@ public class ObstacleGenerator : MonoBehaviour
         if (delay > 0) delay -= Time.deltaTime;
         else
         {
-            delay = 1;
+            delay = 1f;
             Generate();
         }
     }
