@@ -22,7 +22,10 @@ public class AnimationController : MonoBehaviour
 
     public void Hit()
     {
-        animator.SetBool(isHit, true);
+        // 스프라이트 색을 빨간색으로 변경, 일정 시간(무적시간) 뒤 다시 흰색으로 변경할 것
+        // 무적시간 구현할 것
+        
+        //animator.SetBool(isHit, true);
     }
 
     private void CharacterFlipX(Vector2 direction)

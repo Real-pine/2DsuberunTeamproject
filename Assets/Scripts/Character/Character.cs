@@ -23,6 +23,11 @@ public class Character : MonoBehaviour
     private bool isDie = false;
     private bool isInvincible = false;
 
+    //피격 시 잠시 무적
+    private bool isHit = false;
+    private float hitDelay = 1.0f;
+    private Coroutine hitCoroutine;
+
     public float Speed { get; private set; }
 
     public void Awake()
@@ -45,10 +50,13 @@ public class Character : MonoBehaviour
 
     public void HitCharacter(float damage)
     {
-        if (isInvincible) return;
+        if (isInvincible || isHit) return;
         hp -= damage;
         front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
-        animController.Hit();
+        isHit = true;
+        GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+        if (hitCoroutine != null) StopCoroutine(hitCoroutine);
+        hitCoroutine = StartCoroutine("Hit_Invincible");
 
         if (hp <= 0)
         {
@@ -88,5 +96,11 @@ public class Character : MonoBehaviour
     {
         yield return new WaitForSeconds(DURATIONTIME);
         isInvincible = false;
+    }
+    private IEnumerator Hit_Invincible()
+    {
+        yield return new WaitForSeconds(hitDelay);
+        isHit = false;
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
     }
 }
