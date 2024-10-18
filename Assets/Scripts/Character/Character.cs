@@ -11,6 +11,8 @@ public enum CharacterType
 
 public class Character : MonoBehaviour
 {
+    public int playerNumber { get; private set; }
+
     public readonly float FULLHP = 100.0f;
     public readonly float DURATIONTIME = 5.0f;
     public readonly float UPSPEED = 0.2f;
@@ -33,11 +35,11 @@ public class Character : MonoBehaviour
     public void Awake()
     {
         animController = GetComponent<AnimationController>();
-        setCharacter();
     }
 
-    private void setCharacter()
+    public void setCharacter(int _playerNumber)
     {
+        playerNumber = _playerNumber;
         switch (characterType)
         {
             case CharacterType.Black: Speed = 10.0f; break;
