@@ -84,16 +84,6 @@ public class GameManager : MonoBehaviour
     public string GetPlayer1Name()
     {  return player1Name; }
 
-    public void LoadStartScene()
-    {
-        SceneManager.LoadScene("StartScene");
-    }
-
-    public void LoadMainScene()
-    {
-        SceneManager.LoadScene("PlayGameScene");
-    }
-
     // 플레이어 사망 로직 처리, 모든 플레이어가 사망했는지 확인
     public void OnPlayerDeath()
     {

@@ -41,14 +41,14 @@ public class WhenGameOver : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.GetActiveScene();
-        GameManager.Instance.LoadMainScene();
+        SceneManager.LoadScene("PlayGameScene");
     }
 
     public void Exit()
     {
         Time.timeScale = 1.0f;
         SceneManager.GetActiveScene();
-        GameManager.Instance.LoadStartScene();
+        SceneManager.LoadScene("StartScene");
     }
 
     public void PrintScoreText()
