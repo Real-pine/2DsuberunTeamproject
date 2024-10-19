@@ -7,10 +7,18 @@ using Unity.VisualScripting;
 
 public class RankingSet : MonoBehaviour
 {
+    public static RankingSet Instance { get; set; }
+
     private float[] BestScore = new float[7];
     private string[] BestName = new string[7];
 
-    void ScoreSet(float CurrentScore, string CurrentName) // 이름 입력받는부분이 구현되면 맞춰서 수정
+    private void Start()
+    {
+        if (Instance == null)
+        Instance = this;
+    }
+
+    public void ScoreSet(float CurrentScore, string CurrentName) // 이름 입력받는부분이 구현되면 맞춰서 수정
     {
         PlayerPrefs.SetString("CurrentPlayerName", CurrentName);
         PlayerPrefs.SetFloat("CurrentPlayerScore", CurrentScore);
