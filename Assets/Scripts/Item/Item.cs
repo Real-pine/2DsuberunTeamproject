@@ -2,9 +2,9 @@ using UnityEngine;
 
 public enum ItemType
 {
-    HpRecovery,
-    CharacterSpeedUp,
-    CharacterInvincible
+    Chicken,
+    Cheese,
+    Fish
 }
 
 public class Item : MonoBehaviour

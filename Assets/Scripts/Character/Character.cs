@@ -51,14 +51,14 @@ public class Character : MonoBehaviour
             case CharacterType.Brown: Speed = initialSpeed[characterType.ToString()]; break;
             case CharacterType.White: Speed = initialSpeed[characterType.ToString()]; break;
         }
-        front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
+        UpdateHpBar();
     }
 
     public void HitCharacter(float damage)
     {
         if (isInvincible || isHit) return;
         hp -= damage;
-        front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
+        UpdateHpBar();
         isHit = true;
         GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
         if (hitCoroutine != null) StopCoroutine(hitCoroutine);
@@ -78,6 +78,12 @@ public class Character : MonoBehaviour
         {
             hp = FULLHP;
         }
+        UpdateHpBar();
+    }
+
+    public void UpdateHpBar()
+    {
+        front.localScale = new Vector3(hp / FULLHP, 1.0f, 1.0f);
     }
 
     public void CharacterSpeedUp()
@@ -95,6 +101,7 @@ public class Character : MonoBehaviour
     public void CharacterInvincible()
     {
         isInvincible = true;
+        GetComponent<SpriteRenderer>().color = Color.yellow;
         StartCoroutine(ResetInvincible());
     }
 
@@ -102,6 +109,7 @@ public class Character : MonoBehaviour
     {
         yield return new WaitForSeconds(DURATIONTIME);
         isInvincible = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
     private IEnumerator Hit_Invincible()
     {

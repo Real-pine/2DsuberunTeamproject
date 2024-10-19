@@ -22,15 +22,15 @@ public class ItemGenerator : MonoBehaviour
         GameObject newItem;
         switch (itemType)
         {
-            case (int)ItemType.CharacterSpeedUp: 
+            case (int)ItemType.Cheese: 
                 newItem = Instantiate(CheesePrefab);
                 SetItemPosition(newItem);
                 break;
-            case (int)ItemType.HpRecovery: 
+            case (int)ItemType.Chicken: 
                 newItem = Instantiate(ChickenPrefab);
                 SetItemPosition(newItem);
                 break;
-            case (int)ItemType.CharacterInvincible: 
+            case (int)ItemType.Fish: 
                 newItem = Instantiate(FishPrefab);
                 SetItemPosition(newItem);
                 break;
@@ -50,7 +50,6 @@ public class ItemGenerator : MonoBehaviour
     private void SetItemPosition(GameObject itemObj)
     {
         float x = Random.Range(-4.5f, 4.5f);
-        float y = Random.Range(4.0f, 5.0f);
-        itemObj.transform.position = new Vector3(x, y, 0);
+        itemObj.transform.position = new Vector3(x, 5.0f, 0);
     }
 }

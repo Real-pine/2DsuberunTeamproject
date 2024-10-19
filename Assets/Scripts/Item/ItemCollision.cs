@@ -26,9 +26,9 @@ public class ItemCollision : MonoBehaviour
         Character character = playerObject.GetComponent<Character>();
         switch (item.ItemType)
         {
-            case ItemType.HpRecovery: character.HpRecovery(); break;
-            case ItemType.CharacterSpeedUp:character.CharacterSpeedUp(); break;
-            case ItemType.CharacterInvincible: character.CharacterInvincible(); break;
+            case ItemType.Chicken: character.HpRecovery(); break;
+            case ItemType.Cheese:character.CharacterSpeedUp(); break;
+            case ItemType.Fish: character.CharacterInvincible(); break;
         }
     }
 }
