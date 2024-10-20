@@ -44,4 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc479a22dd3a53429e6808c3c93cb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 9045312238659796285, guid: 756eb3bfd574e384a85e07dbdc0551f0, type: 3}
+  obstaclePrefab:
+  - {fileID: 9045312238659796285, guid: 04bc3885e50f3684b84f3eff3f6aae59, type: 3}
+  - {fileID: 9045312238659796285, guid: 4e1525aabd7fa3e41b478dc7a27fa719, type: 3}
+  - {fileID: 9045312238659796285, guid: d3ebecd83cee13d48acca7ed1462eddf, type: 3}
+  - {fileID: 9045312238659796285, guid: d3eb524ee742a1149af5f5ab6d644b21, type: 3}
