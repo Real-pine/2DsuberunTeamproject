@@ -17,16 +17,12 @@ public class InputPlayerNamePanelUI : MonoBehaviour
     [SerializeField] private GameObject errorMessage;
     [SerializeField] private TMP_Text errorMessageText;
 
-    private UIManager uiManager;
-
     // 이름 글자수 제한
     private int minNameLength = 2;
     private int maxNameLength = 5;
 
     private void Start()
     {
-        uiManager = GetComponent<UIManager>();
-
         // 2P는 처음부터 비활성화(2P선택 시 1P입력 완료 후 활성화)
         player2InputField.gameObject.SetActive(false);
         // 에러메세지 출력 비활성화
@@ -54,7 +50,7 @@ public class InputPlayerNamePanelUI : MonoBehaviour
             GameManager.Instance.SetName(player1Name, null);
             if(GameManager.Instance.isSolo)
             {
-                uiManager.OpenPanel(PanelType.CharacterChoose);
+                UIManager.instance.OpenPanel(PanelType.CharacterChoose);
                 AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
             }
             else
@@ -76,7 +72,7 @@ public class InputPlayerNamePanelUI : MonoBehaviour
         if ( IsValidName(player2Name))
         {
             GameManager.Instance.SetName(GameManager.Instance.GetPlayer1Name(), player2Name);
-            uiManager.OpenPanel(PanelType.CharacterChoose);
+            UIManager.instance.OpenPanel(PanelType.CharacterChoose);
         }
         else
         {

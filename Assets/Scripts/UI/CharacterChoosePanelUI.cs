@@ -18,14 +18,11 @@ public class CharacterChoosePanelUI : MonoBehaviour
 
     // 2P모드일 때, 1P가 선택되었는지 확인하는 bool값
     private bool isPlayer1Selected = false;
-
-    private UIManager uiManager;
    
-
     private void Start()
     {
         NextButton.gameObject.SetActive(false);
-        uiManager = GetComponent<UIManager>();
+
         // 버튼들에 리스너 등록
         Character1.onClick.AddListener(() => SelectCharacter(CharacterType.Black));
         Character2.onClick.AddListener(() => SelectCharacter(CharacterType.Blue));
@@ -73,7 +70,7 @@ public class CharacterChoosePanelUI : MonoBehaviour
 
     private void OnClickNextButton()
     {
-        uiManager.OpenPanel(PanelType.SelectStage);
+        UIManager.instance.OpenPanel(PanelType.SelectStage);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 }   

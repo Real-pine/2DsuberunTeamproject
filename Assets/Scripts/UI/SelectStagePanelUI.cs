@@ -10,12 +10,9 @@ public class SelectStagePanel : MonoBehaviour
     [SerializeField] private Button normalButton;
     [SerializeField] private Button hardButton;
 
-    private UIManager uiManager;
 
     private void Start()
     {
-        uiManager = GetComponent<UIManager>();
-
         //버튼에 리스너 등록
         easyButton.onClick.AddListener(() => SelectDifficulty(1));
         normalButton.onClick.AddListener(() => SelectDifficulty(2));

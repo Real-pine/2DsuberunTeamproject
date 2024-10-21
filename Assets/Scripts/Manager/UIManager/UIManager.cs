@@ -29,8 +29,19 @@ public class UIManager : MonoBehaviour
     // 생성된 GetBackButton을 저장할 변수
     private GameObject activeGetBackButton;
 
+    public static UIManager instance{get; private set;}
+
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            instance = this;
+        }
         // 시작 Start패널 여는걸로
         OpenPanel(PanelType.Start);
     }

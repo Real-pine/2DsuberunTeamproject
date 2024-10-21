@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class StartPanelUI : MonoBehaviour
 {
-    private UIManager uiManager;
+    
 
     [SerializeField] private Button startButton;
     [SerializeField] private Button descriptionButton;
@@ -15,7 +15,7 @@ public class StartPanelUI : MonoBehaviour
 
     private void Start()
     {
-        uiManager = GetComponent<UIManager>();
+        
         
         startButton.onClick.AddListener(OnClickStartButton);
         descriptionButton.onClick.AddListener(OnClickDescriptionButton);
@@ -25,25 +25,25 @@ public class StartPanelUI : MonoBehaviour
 
     private void OnClickOptionButton()
     {
-        uiManager.OpenPanel(PanelType.Option);
+        UIManager.instance.OpenPanel(PanelType.Option);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 
     private void OnClickStartButton()
     {
-        uiManager.OpenPanel(PanelType.HowManyPlay);
+        UIManager.instance.OpenPanel(PanelType.HowManyPlay);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 
     private void OnClickDescriptionButton()
     {
-        uiManager.OpenPanel(PanelType.Description);
+        UIManager.instance.OpenPanel(PanelType.Description);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 
     private void OnClickRankingButton()
     {
-        uiManager.OpenPanel(PanelType.Ranking);
+        UIManager.instance.OpenPanel(PanelType.Ranking);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 }
