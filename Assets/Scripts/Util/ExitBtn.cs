@@ -7,6 +7,7 @@ public class ExitBtn : MonoBehaviour
 {
     public void Exit()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("StartScene");
     }
 
