@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelIndex; // 지금 재생하고 있는 채널의 인덱스
 
-    public enum Sfx {  }; // 이 부분에 클립추가
+    public enum Sfx {DM28 , DM29}; // 이 부분에 클립추가
 
     void Awake()
     {
