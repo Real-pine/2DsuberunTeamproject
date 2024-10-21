@@ -5,21 +5,36 @@ using UnityEngine.UI;
 
 public class SoundBar : MonoBehaviour
 {
-    public AudioSource audioSource; // 소리를 조절할 AudioSource
-    public Scrollbar SoundScrollbar; // UI 스크롤바
+    public Scrollbar bgmScrollbar; // BGM 조절 스크롤바
+    public Scrollbar sfxScrollbar; // SFX 조절 스크롤바
 
     void Start()
     {
-        // 스크롤바의 값을 현재 볼륨으로 설정
-        //audioSource.volume = SoundScrollbar.value;
+        // 스크롤바 초기 값 설정
+        bgmScrollbar.value = AudioManager.instance.bgmVolume;
+        sfxScrollbar.value = AudioManager.instance.sfxVolume;
 
         // 스크롤바의 값이 변경될 때 호출될 메서드 등록
-        //SoundScrollbar.onValueChanged.AddListener(OnVolumeChange);
+        bgmScrollbar.onValueChanged.AddListener(OnBgmVolumeChange);
+        sfxScrollbar.onValueChanged.AddListener(OnSfxVolumeChange);
     }
 
-    void OnVolumeChange(float value)
+    public void OnBgmVolumeChange(float value)
     {
-        // 스크롤바의 값에 따라 AudioSource 볼륨을 조절
-        //audioSource.volume = value;
+        // AudioManager의 bgmVolume 변경
+        AudioManager.instance.bgmVolume = value;
+        AudioManager.instance.bgmPlayer.volume = value; // BGM 볼륨 업데이트
+    }
+
+    public void OnSfxVolumeChange(float value)
+    {
+        // AudioManager의 sfxVolume 변경
+        AudioManager.instance.sfxVolume = value;
+
+        // 모든 SFX 플레이어의 볼륨 업데이트
+        foreach (var sfxPlayer in AudioManager.instance.sfxPlayers)
+        {
+            sfxPlayer.volume = value; // SFX 플레이어 볼륨 업데이트
+        }
     }
 }
