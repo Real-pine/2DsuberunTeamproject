@@ -67,6 +67,7 @@ public class Character : MonoBehaviour
         if (hp <= 0)
         {
             isDie = true;
+            Destroy(gameObject);
             GameManager.Instance.OnPlayerDeath();
         }
     }
