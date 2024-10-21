@@ -24,7 +24,7 @@ public class RankingPanelUI : MonoBehaviour
             float bestScore = PlayerPrefs.GetFloat(i + "BestScore");
 
             nameText[i].text = (i + 1) + ". " + bestName;
-            scoreText[i].text = bestScore.ToString() + " M";
+            scoreText[i].text = bestScore.ToString("F2") + " M";
         }
     }
 }
