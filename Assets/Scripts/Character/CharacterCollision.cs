@@ -33,6 +33,7 @@ public class CharacterCollision : MonoBehaviour
         if (character.Hp <= 0)
         {
             isDie = true;
+            Destroy(gameObject);
             GameManager.Instance.OnPlayerDeath();
         }
     }

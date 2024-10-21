@@ -10,28 +10,22 @@ using UnityEngine;
     //      게임매니저에 저장된 스코어를 RankingSet을 통해 랭크저장
 public class SettingPlayerScore : MonoBehaviour
 {
-    private float player1StartTime;
-    private float player2StartTime;
+    private Character character;
+    private float playerStartTime;
     private int _playerNumber;
     private bool isScoring = true;
 
     private void Start()
     {
-        int _playerNumber = GetComponent<Character>().playerNumber;
-        
-
-        player1StartTime = Time.time;
-        if (!GameManager.Instance.isSolo)
-        {
-            player2StartTime = Time.time;
-        }
-        
+        character = GetComponent<Character>();
+        InitializePlayerScore(character.playerNumber);
+        playerStartTime = Time.time;
     }
     private void Update()
     {
         if(isScoring)
         {
-            SetPlayerScore(_playerNumber);
+            SetPlayerScore(character.playerNumber);
         }   
     }
 
@@ -42,15 +36,26 @@ public class SettingPlayerScore : MonoBehaviour
 
     public void SetPlayerScore(int playerNumber)
     {
-        float score = Time.time - (playerNumber == 1 ? player1StartTime : player2StartTime);
+        float score = Time.time - playerStartTime;
         if (playerNumber == 1)
         {
             GameManager.Instance.SetPlayer1Score(score);
         }
-        else
+        else if (playerNumber == 2) 
         {
-            GameManager.Instance.SetPlayer1Score(score);
             GameManager.Instance.SetPlayer2Score(score);
+        }
+    }
+
+    public void InitializePlayerScore(int playerNumber)
+    {
+        if ( playerNumber == 1)
+        {
+            GameManager.Instance.SetPlayer1Score(0);
+        }
+        else if (playerNumber == 2)
+        {
+            GameManager.Instance.SetPlayer2Score(0);
         }
     }
         
