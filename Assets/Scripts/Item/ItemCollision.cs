@@ -28,7 +28,7 @@ public class ItemCollision : MonoBehaviour
         {
             case ItemType.Chicken: characterCollision.HpRecovery(); break;
             case ItemType.Cheese: characterCollision.CharacterSpeedUp(); break;
-            case ItemType.Fish: characterCollision.CharacterInvincible(); break;
+            case ItemType.Fish: characterCollision.CharacterInvincibility(); break;
         }
     }
 }

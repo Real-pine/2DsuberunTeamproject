@@ -60,14 +60,14 @@ public class CharacterCollision : MonoBehaviour
         character.SetSpeed(character.GetInitialSpeed());
     }
 
-    public void CharacterInvincible()
+    public void CharacterInvincibility()
     {
         isInvincible = true;
         GetComponent<SpriteRenderer>().color = Color.yellow;
-        StartCoroutine(ResetInvincible());
+        StartCoroutine(ResetInvincibility());
     }
 
-    private IEnumerator ResetInvincible()
+    private IEnumerator ResetInvincibility()
     {
         yield return new WaitForSeconds(DURATIONTIME);
         isInvincible = false;
