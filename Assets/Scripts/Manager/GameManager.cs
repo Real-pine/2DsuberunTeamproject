@@ -42,7 +42,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void Awake()
+    {
+        AudioManager.instance.PlayBgm(true);
+    }
     public void SetSolo(bool _isSolo)
     {
         isSolo = _isSolo;
@@ -106,5 +109,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        AudioManager.instance.PlayBgm(false);
     }
 }

@@ -55,10 +55,12 @@ public class InputPlayerNamePanelUI : MonoBehaviour
             if(GameManager.Instance.isSolo)
             {
                 uiManager.OpenPanel(PanelType.CharacterChoose);
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
             }
             else
             {
                 player2InputField.gameObject.SetActive(true);
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
             }
         }
         else

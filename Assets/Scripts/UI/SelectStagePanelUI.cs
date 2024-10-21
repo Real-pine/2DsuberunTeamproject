@@ -28,7 +28,7 @@ public class SelectStagePanel : MonoBehaviour
     private void SelectDifficulty(int difficulty)
     {
         GameManager.Instance.SetDifficulty(difficulty);
-
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
         SceneManager.LoadScene("PlayGameScene");
     }
 }

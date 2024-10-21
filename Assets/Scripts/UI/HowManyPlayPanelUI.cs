@@ -23,6 +23,7 @@ public class HowManyPlayPanel : MonoBehaviour
     private void SetPlayerMode(bool _isSolo)
     {
         GameManager.Instance.SetSolo(_isSolo);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
         //다음 패널로 전환
         uiManager.OpenPanel(PanelType.InputPlayerName);
     }
