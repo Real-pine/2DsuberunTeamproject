@@ -23,12 +23,12 @@ public class ItemCollision : MonoBehaviour
 
     private void CheckItemType(GameObject playerObject)
     {
-        Character character = playerObject.GetComponent<Character>();
+        CharacterCollision characterCollision = playerObject.GetComponent<CharacterCollision>();
         switch (item.ItemType)
         {
-            case ItemType.Chicken: character.HpRecovery(); break;
-            case ItemType.Cheese:character.CharacterSpeedUp(); break;
-            case ItemType.Fish: character.CharacterInvincible(); break;
+            case ItemType.Chicken: characterCollision.HpRecovery(); break;
+            case ItemType.Cheese: characterCollision.CharacterSpeedUp(); break;
+            case ItemType.Fish: characterCollision.CharacterInvincible(); break;
         }
     }
 }

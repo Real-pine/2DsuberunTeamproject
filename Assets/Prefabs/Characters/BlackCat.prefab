@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 7538426904719283382}
   - component: {fileID: 5675544023522789825}
   - component: {fileID: -8940758738338985982}
+  - component: {fileID: 237506937784680097}
   m_Layer: 0
   m_Name: BlackCat
   m_TagString: Player
@@ -385,6 +386,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f606044df3ccf04aa360393a72ecff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &237506937784680097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421710684271797964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dfb1363520c864ca5b712d4a6ce54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8930368394943453032

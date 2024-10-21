@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 7759011727113723599}
   - component: {fileID: -7659386569210154835}
   - component: {fileID: -4279200572469790770}
+  - component: {fileID: 2063151121939800970}
   m_Layer: 0
   m_Name: BrownCat
   m_TagString: Player
@@ -488,5 +489,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f606044df3ccf04aa360393a72ecff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2063151121939800970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179046937404955223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43dfb1363520c864ca5b712d4a6ce54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
