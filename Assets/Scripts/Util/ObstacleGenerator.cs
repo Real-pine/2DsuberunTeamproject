@@ -6,15 +6,16 @@ using UnityEngine;
 public class ObstacleGenerator : MonoBehaviour
 {
     public GameObject[] obstaclePrefab;
-    private float delay = 0.5f;
+    private float delay;
 
     private void Generate()
     {
-        GameObject newObstacle = Instantiate(obstaclePrefab[Random.Range(0, obstaclePrefab.Length)]);
+        int obstacleIndex = Random.Range(0, obstaclePrefab.Length);
+        GameObject newObstacle = Instantiate(obstaclePrefab[obstacleIndex]);
         newObstacle.transform.position = new Vector2(Random.Range(-5.5f, 5.5f), 6);
 
         //장애물 종류에 따라 데미지 다르게 설정할 것
-        newObstacle.GetComponent<ObstacleCollision>().SetDamage(10);
+        newObstacle.GetComponent<ObstacleCollision>().SetDamage(obstacleIndex * 5);
     }
 
     private void Update()
@@ -22,7 +23,8 @@ public class ObstacleGenerator : MonoBehaviour
         if (delay > 0) delay -= Time.deltaTime;
         else
         {
-            delay = 0.5f;
+            delay = 1.0f / GameManager.Instance.stageDifficulty;
+            Debug.Log(1.0f / GameManager.Instance.stageDifficulty);
             Generate();
         }
     }
