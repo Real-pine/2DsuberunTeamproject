@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
             // 싱글 플레이의 경우 첫 번째 사망에서 바로 게임 오버
             WhenGameOver.Instance.TriggerGameOverUI();
             RankingSet.Instance.ScoreSet(player1Score, player1Name);
+            AudioManager.instance.PlayBgm(false);
         }
         else
         {
@@ -106,9 +107,8 @@ public class GameManager : MonoBehaviour
                 WhenGameOver.Instance.TriggerGameOverUI();
                 RankingSet.Instance.ScoreSet(player1Score, player1Name);
                 RankingSet.Instance.ScoreSet(player2Score, player2Name);
+                AudioManager.instance.PlayBgm(false);
             }
         }
-
-        AudioManager.instance.PlayBgm(false);
     }
 }
