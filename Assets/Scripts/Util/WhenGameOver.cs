@@ -12,8 +12,6 @@ public class WhenGameOver : MonoBehaviour
     [SerializeField] private Button retryButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private Image gameOverImage;
-    [SerializeField] private TMP_Text player1Score;
-    [SerializeField] private TMP_Text player2Score;
     
    
     private void Start()
@@ -49,19 +47,5 @@ public class WhenGameOver : MonoBehaviour
         Time.timeScale = 1.0f;
         SceneManager.GetActiveScene();
         SceneManager.LoadScene("StartScene");
-    }
-
-    public void PrintScoreText()
-    {
-        if (GameManager.Instance.isSolo)
-        {
-            player1Score.text = GameManager.Instance.player1Score.ToString("F2");
-            player2Score = null;
-        }
-        else
-        {
-            player1Score.text = GameManager.Instance.player1Score.ToString("F2");
-            player2Score.text = GameManager.Instance.player2Score.ToString("F2");
-        }
     }
 }
