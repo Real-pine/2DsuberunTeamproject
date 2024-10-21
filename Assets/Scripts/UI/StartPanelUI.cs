@@ -26,20 +26,24 @@ public class StartPanelUI : MonoBehaviour
     private void OnClickOptionButton()
     {
         uiManager.OpenPanel(PanelType.Option);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 
     private void OnClickStartButton()
     {
         uiManager.OpenPanel(PanelType.HowManyPlay);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 
     private void OnClickDescriptionButton()
     {
         uiManager.OpenPanel(PanelType.Description);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 
     private void OnClickRankingButton()
     {
         uiManager.OpenPanel(PanelType.Ranking);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 }

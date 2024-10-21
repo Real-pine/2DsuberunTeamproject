@@ -46,7 +46,7 @@ public class CharacterChoosePanelUI : MonoBehaviour
             // 1P 캐릭터 선택 및 저장
             GameManager.Instance.SetPlayerCharacter(1, (int)selectedCharacter);
             Player1Selected.sprite = characterSprites[(int)selectedCharacter];
-
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
             //바로 넥스트 버튼 활성화
             NextButton.gameObject.SetActive(true);
         }
@@ -57,14 +57,15 @@ public class CharacterChoosePanelUI : MonoBehaviour
             {
                 GameManager.Instance.SetPlayerCharacter(1, (int)selectedCharacter);
                 Player1Selected.sprite = characterSprites[(int)selectedCharacter];
-                isPlayer1Selected=true;
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
+                isPlayer1Selected =true;
             }
             // 2P 선택 중
             else
             {
                 GameManager.Instance.SetPlayerCharacter(2, (int)selectedCharacter);
                 Player2Selected.sprite = characterSprites[(int)selectedCharacter];
-
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
                 NextButton.gameObject.SetActive(true);
             }
         }
@@ -73,5 +74,6 @@ public class CharacterChoosePanelUI : MonoBehaviour
     private void OnClickNextButton()
     {
         uiManager.OpenPanel(PanelType.SelectStage);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 }   

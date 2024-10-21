@@ -40,6 +40,8 @@ public class WhenGameOver : MonoBehaviour
         Time.timeScale = 1.0f;
         SceneManager.GetActiveScene();
         SceneManager.LoadScene("PlayGameScene");
+        AudioManager.instance.PlayBgm(true);
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 
     public void Exit()
@@ -47,5 +49,6 @@ public class WhenGameOver : MonoBehaviour
         Time.timeScale = 1.0f;
         SceneManager.GetActiveScene();
         SceneManager.LoadScene("StartScene");
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
     }
 }
