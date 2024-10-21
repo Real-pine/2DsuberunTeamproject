@@ -7076,7 +7076,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1815155271, guid: 681d5f328ca268842bb59406cec1f112, type: 3}
+  m_Sprite: {fileID: -1598556566, guid: 3e9fb9d6df38d4f41adc96096c45eddb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7305,8 +7305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterImage: {fileID: 1398053093}
-  defaultImage: {fileID: 1815155271, guid: 681d5f328ca268842bb59406cec1f112, type: 3}
-  hoverImage: {fileID: -963903310, guid: 681d5f328ca268842bb59406cec1f112, type: 3}
+  defaultImage: {fileID: -1598556566, guid: 3e9fb9d6df38d4f41adc96096c45eddb, type: 3}
+  hoverImage: {fileID: 321444133, guid: 3e9fb9d6df38d4f41adc96096c45eddb, type: 3}
 --- !u!1 &1526063016
 GameObject:
   m_ObjectHideFlags: 0
@@ -8540,7 +8540,7 @@ MonoBehaviour:
   characterSprites:
   - {fileID: -1712429299, guid: 3799311263b41a14cbe8caa77864dc97, type: 3}
   - {fileID: -532635534, guid: d71c3ee1259145947a86cc34ebf9c9fe, type: 3}
-  - {fileID: 1815155271, guid: 681d5f328ca268842bb59406cec1f112, type: 3}
+  - {fileID: -1598556566, guid: 3e9fb9d6df38d4f41adc96096c45eddb, type: 3}
   - {fileID: 1899967781, guid: 56c17c038252f5c43ba325e69fa6777b, type: 3}
 --- !u!1 &1689518868
 GameObject:
