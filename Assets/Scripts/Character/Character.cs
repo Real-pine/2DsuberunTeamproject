@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
 {
     public int playerNumber { get; private set; }
 
-    public static readonly float FULLHP = 100.0f;
+    public static readonly float FULLHP = 50.0f;
     public readonly float DURATIONTIME = 5.0f;
     public readonly float UPSPEED = 0.2f;
 
@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
 
     //피격 시 잠시 무적
     private bool isHit = false;
-    private float hitDelay = 1.0f;
+    private float hitDelay = 0.2f;
     private Coroutine hitCoroutine;
 
     public float Speed { get; private set; }

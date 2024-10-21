@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public int player2Character { get; private set; }
 
     //StartScene 에서 선택한 난이도
-    private int stageDifficulty;
+    public int stageDifficulty { get; private set; }
 
     //MainScene 에서 저장되는 점수
     public float player1Score { get; private set; }
@@ -42,7 +42,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void Awake()
+    {
+        AudioManager.instance.PlayBgm(true);
+    }
     public void SetSolo(bool _isSolo)
     {
         isSolo = _isSolo;
@@ -106,5 +109,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        AudioManager.instance.PlayBgm(false);
     }
 }
