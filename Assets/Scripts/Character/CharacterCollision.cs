@@ -73,6 +73,7 @@ public class CharacterCollision : MonoBehaviour
         isInvincible = false;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
+
     private IEnumerator Hit_Invincible()
     {
         yield return new WaitForSeconds(hitDelay);

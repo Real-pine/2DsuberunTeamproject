@@ -14,8 +14,6 @@ public class Background : MonoBehaviour
         {
             transform.position = target.position - moveDirection * scrollAmount;
         }
-        //
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
-        
     }
 }
