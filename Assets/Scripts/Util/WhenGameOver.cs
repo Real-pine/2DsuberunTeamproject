@@ -48,6 +48,7 @@ public class WhenGameOver : MonoBehaviour
     public void Exit()
     {
         Time.timeScale = 1.0f;
+        GameManager.Instance.deadPlayerCount = 0;
         SceneManager.GetActiveScene();
         SceneManager.LoadScene("StartScene");
         AudioManager.instance.PlaySfx(AudioManager.Sfx.DM28);
