@@ -18,7 +18,7 @@
 '기본아이디어는 떨어지는 물체를 피한다' 이지만 맵을 동시에 스크롤함으로써
 캐릭터가 앞으로 속도감있게 나아간다라는 느낌을 주면서 물체를 피하는것이 핵심아이디어입니다.
 
-![인게임영상](https://i.ibb.co/CtTcCzN/suberunker.gif)
+![게임플레이](https://ifh.cc/g/Lt1BYF.gif)
 
 [플레이영상-유튜브](https://youtu.be/YJ_QoOSKQsk)
 
