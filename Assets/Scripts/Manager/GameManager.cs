@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     
     public bool isSolo {get; private set;}
     //GameOver판단을 위한 변수
-    private int deadPlayerCount = 0; 
+    public int deadPlayerCount = 0; 
 
     //StartScene 에서 정한 플레이어 이름
     private string player1Name;

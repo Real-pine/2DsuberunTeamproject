@@ -38,6 +38,7 @@ public class WhenGameOver : MonoBehaviour
     public void Retry()
     {
         Time.timeScale = 1.0f;
+        GameManager.Instance.deadPlayerCount = 0;
         SceneManager.GetActiveScene();
         SceneManager.LoadScene("PlayGameScene");
         AudioManager.instance.PlayBgm(true);
