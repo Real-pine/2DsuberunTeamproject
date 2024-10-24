@@ -20,8 +20,9 @@ public class Character : MonoBehaviour
 
     private AnimationController animController;
 
-    private Dictionary<string, float> initialSpeed = new Dictionary<string, float>
-    { { "Black", 10.0f }, { "Blue", 9.0f }, { "Brown", 9.5f }, { "White", 10.5f } };
+    private Dictionary<CharacterType, float> initialSpeed = new Dictionary<CharacterType, float>
+    { { CharacterType.Black, 10.0f }, { CharacterType.Blue, 9.0f },
+      { CharacterType.Brown, 9.5f },  { CharacterType.White, 10.5f } };
 
     public float Hp { get; private set; } = FULLHP;
 
@@ -37,10 +38,10 @@ public class Character : MonoBehaviour
         playerNumber = _playerNumber;
         switch (characterType)
         {
-            case CharacterType.Black: Speed = initialSpeed[characterType.ToString()]; break;
-            case CharacterType.Blue: Speed = initialSpeed[characterType.ToString()]; break;
-            case CharacterType.Brown: Speed = initialSpeed[characterType.ToString()]; break;
-            case CharacterType.White: Speed = initialSpeed[characterType.ToString()]; break;
+            case CharacterType.Black: Speed = initialSpeed[characterType]; break;
+            case CharacterType.Blue: Speed = initialSpeed[characterType]; break;
+            case CharacterType.Brown: Speed = initialSpeed[characterType]; break;
+            case CharacterType.White: Speed = initialSpeed[characterType]; break;
         }
         UpdateHpBar();
     }
@@ -57,7 +58,7 @@ public class Character : MonoBehaviour
 
     public float GetInitialSpeed()
     {
-        return initialSpeed[characterType.ToString()];
+        return initialSpeed[characterType];
     }
 
     public void UpdateHpBar()
