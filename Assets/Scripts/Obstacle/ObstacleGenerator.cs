@@ -15,7 +15,7 @@ public class ObstacleGenerator : MonoBehaviour
         newObstacle.transform.position = new Vector2(Random.Range(-5.5f, 5.5f), 6);
 
         //장애물 종류에 따라 데미지 다르게 설정할 것
-        newObstacle.GetComponent<ObstacleCollision>().SetDamage(obstacleIndex * 5);
+        newObstacle.GetComponent<ObstacleCollision>().SetDamage((obstacleIndex+1) * 5);
     }
 
     private void Update()

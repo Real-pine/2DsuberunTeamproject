@@ -1119,11 +1119,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmClip: {fileID: 8300000, guid: 1532c7e67c2d60c4c8780da14b7e8fcf, type: 3}
   bgmVolume: 0.5
+  bgmPlayer: {fileID: 0}
   sfxClips:
   - {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   - {fileID: 8300000, guid: ed4d4fa05c5665e4b814c8aa63ea9f3c, type: 3}
   sfxVolume: 1
   channels: 1
+  sfxPlayers: []
 --- !u!4 &160663266
 Transform:
   m_ObjectHideFlags: 0
@@ -3864,7 +3866,19 @@ MonoBehaviour:
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 649507818}
+        m_TargetAssemblyTypeName: SoundBar, Assembly-CSharp
+        m_MethodName: OnSfxVolumeChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &649507816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3915,8 +3929,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c68552372e2c25479414d1131b13220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  SoundScrollbar: {fileID: 649507815}
+  bgmScrollbar: {fileID: 911614315}
+  sfxScrollbar: {fileID: 649507815}
 --- !u!1 &649598507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5651,7 +5665,19 @@ MonoBehaviour:
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 911614318}
+        m_TargetAssemblyTypeName: SoundBar, Assembly-CSharp
+        m_MethodName: OnBgmVolumeChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &911614316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5702,8 +5728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c68552372e2c25479414d1131b13220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  SoundScrollbar: {fileID: 911614315}
+  bgmScrollbar: {fileID: 911614315}
+  sfxScrollbar: {fileID: 649507815}
 --- !u!1 &968206325
 GameObject:
   m_ObjectHideFlags: 0

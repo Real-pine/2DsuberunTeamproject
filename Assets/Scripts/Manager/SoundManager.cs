@@ -9,13 +9,13 @@ public class AudioManager : MonoBehaviour
     [Header("#BGM")] //배경음악
     public AudioClip bgmClip;
     public float bgmVolume;
-    AudioSource bgmPlayer;
+    public AudioSource bgmPlayer;
 
     [Header("#SFX")] //효과음
     public AudioClip[] sfxClips;
     public float sfxVolume;
     public int channels; //한번에 여러개의 효과음 재생하기위해 필요
-    AudioSource[] sfxPlayers;
+    public AudioSource[] sfxPlayers;
     int channelIndex; // 지금 재생하고 있는 채널의 인덱스
 
     public enum Sfx {DM28 , DM29}; // 이 부분에 클립추가
