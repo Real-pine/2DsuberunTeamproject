@@ -15,9 +15,12 @@ public class CharacterCollision : MonoBehaviour
     private bool isDie = false;
     private float hitDelay = 0.2f;
 
+    private SpriteRenderer sprite;
+
     private void Awake()
     {
         character = GetComponent<Character>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public void HitCharacter(float damage)
@@ -26,9 +29,10 @@ public class CharacterCollision : MonoBehaviour
         character.SetHp(character.Hp - damage);
         character.UpdateHpBar();
         isHit = true;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        sprite.color = Color.red;
+
         if (hitCoroutine != null) StopCoroutine(hitCoroutine);
-        hitCoroutine = StartCoroutine("Hit_Invincible");
+        hitCoroutine = StartCoroutine(HitInvincible());
 
         if (character.Hp <= 0)
         {
@@ -40,11 +44,8 @@ public class CharacterCollision : MonoBehaviour
 
     public void HpRecovery()
     {
-        character.SetHp(character.Hp + 10.0f);
-        if (character.Hp > Character.FULLHP)
-        {
-            character.SetHp(Character.FULLHP);
-        }
+        float newHp = Mathf.Min(character.Hp + 10.0f, Character.FULLHP);
+        character.SetHp(newHp);
         character.UpdateHpBar();
     }
 
@@ -63,7 +64,7 @@ public class CharacterCollision : MonoBehaviour
     public void CharacterInvincibility()
     {
         isInvincible = true;
-        GetComponent<SpriteRenderer>().color = Color.yellow;
+        sprite.color = Color.yellow;
         StartCoroutine(ResetInvincibility());
     }
 
@@ -71,10 +72,10 @@ public class CharacterCollision : MonoBehaviour
     {
         yield return new WaitForSeconds(DURATIONTIME);
         isInvincible = false;
-        GetComponent<SpriteRenderer>().color = Color.white;
+        sprite.color = Color.white;
     }
 
-    private IEnumerator Hit_Invincible()
+    private IEnumerator HitInvincible()
     {
         yield return new WaitForSeconds(hitDelay);
         isHit = false;
